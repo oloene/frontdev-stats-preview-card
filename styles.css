@@ -55,6 +55,7 @@ p {
 
 .content-header {
     font-size: 2rem;
+    font-weight: var(--font-bold);
     margin-bottom: 2rem;
 }
 
@@ -70,6 +71,10 @@ p {
 .content-stats {
     display: flex;
     gap: 4rem;
+}
+
+.stat-item > h2 {
+    font-weight: var(--font-bold);
 }
 
 .content-image {
