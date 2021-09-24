@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    /*color primary*/
+    --primary-blue: hsl(233, 47%, 7%);
+    --primary-blue-des: hsl(244, 38%, 16%);
+    --primary-violet: hsl(277, 64%, 61%);
+    /*color neutral*/
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-white-paragraph: hsla(0, 0%, 100%, 0.75);
+    --neutral-white-headings: hsla(0, 0%, 100%, 0.6);
+    /*font*/
+    --font-normal: 400;
+    --font-bold: 700;
+}
+
+body,
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+.App {
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: var(--font-normal);
+    background: var(--primary-blue);
+    color: var(--neutral-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: min(100%, 70rem);
+    margin: 1rem;
+    background: var(--primary-blue-des);
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content content-image";
+}
+
+.content {
+    grid-area: content;
+    padding: 4.5rem 9rem 4rem 4.5rem;
+}
+
+.content-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.content-header > span {
+    color: var(--primary-violet);
+}
+
+.content-text {
+    color: var(--neutral-white-paragraph);
+    margin-bottom: 5.5rem;
+}
+
+.content-stats {
+    display: flex;
+    gap: 4rem;
+}
+
+.content-image {
+    grid-area: content-image;
+}
+
+.image {
+    border-radius: 0 0.5rem 0.5rem 0;
+    max-width: 540px;
+    height: 446px;
+    display: block;
+    background-image: linear-gradient(
+            hsla(277, 100%, 38%, 0.5),
+            hsla(277, 100%, 38%, 0.5)
+        ),
+        url("./image-header-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1140px) {
+    .main {
+        max-width: 375px;
+        max-height: 800px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr;
+        grid-template-areas:
+            "content-image"
+            "content";
+    }
+
+    .content-header,
+    .content-text,
+    .stat-item {
+        text-align: center;
+    }
+
+    .content {
+        padding: 2rem 2.5rem;
+    }
+
+    .content-text {
+        margin-bottom: 2rem;
+    }
+
+    .content-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .content-image > .image {
+        border-radius: 0.5rem 0.5rem 0 0;
+        height: 300px;
+    }
+}
