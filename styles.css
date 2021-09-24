@@ -76,6 +76,9 @@ p {
 .stat-item > h2 {
     font-weight: var(--font-bold);
 }
+.stat-item > p {
+    color: var(--neutral-white-paragraph);
+}
 
 .content-image {
     grid-area: content-image;
